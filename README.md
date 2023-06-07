@@ -1,6 +1,8 @@
 # Basic Vue project with Threejs
 
 ## Project setup
+vue init PatrickDolanJ/vue-three-template "project-name"
+
 ```
 npm install
 ```

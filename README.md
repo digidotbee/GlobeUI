@@ -1,4 +1,4 @@
-# proto-website
+# Basic Vue project with Threejs
 
 ## Project setup
 ```

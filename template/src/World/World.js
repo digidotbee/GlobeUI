@@ -5,6 +5,8 @@ import { Loop } from "./System/Loop";
 import { Resizer } from "./System/Resizer";
 import { CreateBaseCube } from "./Components/StarterCube";
 import { AxesHelper } from "three";
+import { createOrbitControls } from "./Components/OrbitController";
+import { createOrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 
 
@@ -24,8 +26,8 @@ class World {
     renderer = createRenderer();
     container.append(renderer.domElement);
     loop = new Loop(camera, scene, renderer);
+    const orbitController = createOrbitControls(camera,container);
     const resizer = new Resizer(container, camera, renderer);
-
 
     //Helpers
     const axesHelper = new AxesHelper(10);

@@ -10,10 +10,7 @@ class Resizer {
     setSize(container, camera, renderer);
     window.addEventListener("resize", () => {
       setSize(container, camera, renderer);
-      camera.updateProjectionMatrix();
-      this.onResize();
     });
   }
-  onResize(){}
 }
 export { Resizer };

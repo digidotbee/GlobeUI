@@ -6,9 +6,6 @@ import { Resizer } from "./System/Resizer";
 import { CreateBaseCube } from "./Components/StarterCube";
 import { AxesHelper } from "three";
 import { createOrbitControls } from "./Components/OrbitController";
-import { createOrbitControls } from "three/examples/jsm/controls/OrbitControls";
-
-
 
 let renderer;
 let camera;
@@ -33,7 +30,7 @@ class World {
     const axesHelper = new AxesHelper(10);
     scene.add(axesHelper);
 
-    //Scene
+    //Tester Cube with Basic Shader Material
     const cube = CreateBaseCube();
     cube.position.set(0, 0, 0);
     scene.add(cube);

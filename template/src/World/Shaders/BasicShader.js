@@ -1,4 +1,4 @@
-import { UniformsLib, UniformsUtils, ShaderLib, ShaderMaterial } from "three";
+import { UniformsLib, UniformsUtils, ShaderMaterial } from "three";
 
 const basicVertShader = /*glsl*/`
 #include <fog_pars_vertex>
@@ -6,8 +6,9 @@ varying vec2 vUv;
 
 void main(){
     vUv = uv;
-    gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+    vec4 mvPosition = modelViewMatrix * vec4(position,1.0);
     #include <fog_vertex>
+    gl_Position = projectionMatrix * mvPosition;
 }
 `;
 
@@ -15,20 +16,16 @@ const basicFragShader = /*glsl*/`
 #include <fog_pars_fragment>
 varying vec2 vUv;
 void main(){
-
     gl_FragColor = vec4(vUv,1.0,1.0);
     #include <fog_fragment>
 }   
 `;
 
-const shaderPoint = ShaderLib.points;
 
-const uniforms = UniformsUtils.merge([UniformsLib['fog'], UniformsUtils.clone(shaderPoint.uniforms)]);
-uniforms.scale.value = 350;
+const uniforms = UniformsUtils.merge([UniformsLib['fog']]);
 const BasicShaderMat = new ShaderMaterial({
     uniforms: uniforms,
     defines: {
-        USE_SIZEATTENUATION: ""
     },
     vertexShader: basicVertShader,
     fragmentShader: basicFragShader,

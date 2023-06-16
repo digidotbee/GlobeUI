@@ -7,7 +7,7 @@ fogNear = 100,
 fogFar = 355) {
   const scene = new Scene();
   scene.background = backgroundColor;
-  //scene.fog = new Fog(fogColor, fogNear, fogFar); 
+  scene.fog = new Fog(fogColor, fogNear, fogFar); 
   return scene;
 }
 

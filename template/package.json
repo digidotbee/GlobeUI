@@ -1,6 +1,6 @@
 {
-  "name": "{{name}}",
-  "author": "{{author}}",
+  "name": "template",
+  "author": "PatrickDolan",
   "version": "0.1.0",
   "private": true,
   "scripts": {

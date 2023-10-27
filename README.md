@@ -3,9 +3,8 @@
 ## Project setup
 
 ```
-vue init PatrickDolanJ/vue-three-template "project-name"
-```
-<br/>
+Special thanks to PatrickDolanJ. 
+You will first have to change the package.json to include your project name and identify the authhor for this to build.
 
 ```
 npm install

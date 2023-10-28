@@ -5,9 +5,8 @@ import { createScene } from "./Components/scene";
 import { Loop } from "./System/Loop";
 import { Resizer } from "./System/Resizer";
 import { createOrbitControls } from "./Components/OrbitController";
+import { BasicShaderMat } from "./Shaders/BasicShader";
 import { Mesh, SphereGeometry, TextureLoader, ShaderMaterial, Color } from 'three';
-
-
 
 const vertexShader = `
   #ifdef GL_ES
